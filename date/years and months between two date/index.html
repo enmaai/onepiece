@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="section">
+        <h3>Input</h3>
+        <ul>
+            <li>start date:<input type="text" id="start"></li>
+            <li>end date:<input type="text" id="end"></li>
+            <li><button id="submit">submit</button></li>
+        </ul>
+        <h3>Output</h3>
+        <div id="ret">
+            
+        </div>
+    </div>
+    <script>
+        var start = document.querySelector('#start'),
+            end = document.querySelector('#end'),
+            button = document.querySelector('#submit'),
+            ret = document.querySelector('#ret');
+        button.onclick = function(){
+            var s = new Date(start.value),
+                e = new Date(end.value);
+            ret.innerHTML = JSON.stringify(monthAndYearBetweenTwoDates(s,e));
+        }
+    </script>
+</body>
+</html>
