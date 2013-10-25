@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="gbk">
+    <title>all the white spaces in html</title>
+    <style type="text/css">
+    body{font-family:'tahoma','宋体'}
+        ul{list-style:decimal;}
+        label{display:inline-block;width:220px;text-align:right;}
+        td,th{border:1px solid #eee;padding:5px;}
+        td{font-size:12px;}
+        table{border-collapse:collapse;width:50%;}
+        .space{font-weight:800;color:#f40;}
+        a{color:#f40;margin:0 2px;}
+    </style>
+</head>
+<body>
+    <table cellpadding="0" cellspacing="0">
+        <caption>随字体大小变化，letter-spacing也会影响</caption>
+        <thead>
+            <tr>
+                <th>空格转义符</th>
+                <th>数字</th>
+                <th>英文</th>
+                <th>汉字</th>
+            </tr>
+        </thead>
+        <tbody> 
+            <tr>
+                <td>无空格 : <span class="space">浏览器默认</span></td>
+                <td>12</td>
+                <td>ab</td>
+                <td>我们</td>
+            </tr>       
+            <tr>
+                <td>hair space : <span class="space">&amp;#8202;</span></td>
+                <td>1&#8202;2</td>
+                <td>a&#8202;b</td>
+                <td>我&#8202;们</td>
+            </tr>
+            <tr>
+                <td>thin space : <span class="space">&amp;#8201;</span></td>
+                <td>1&#8201;2</td>
+                <td>a&#8201;b</td>
+                <td>我&#8201;们</td>
+            </tr>
+            <tr>
+                <td>6-per-em space : <span class="space">&amp;#8198;</span></td>
+                <td>1&#8198;2</td>
+                <td>a&#8198;b</td>
+                <td>我&#8198;们</td>
+            </tr>
+            <tr>
+                <td>4-per-em space : <span class="space">&amp;#8197;</span></td>
+                <td>1&#8197;2</td>
+                <td>a&#8197;b</td>
+                <td>我&#8197;们</td>
+            </tr>
+            <tr>
+                <td>punctuation space : <span class="space">&amp;#8200;</span></td>
+                <td>1&#8200;2</td>
+                <td>a&#8200;b</td>
+                <td>我&#8200;们</td>
+            </tr>
+            <tr>
+                <td>3-per-em space : <span class="space">&amp;#8196;</span></td>
+                <td>1&#8196;2</td>
+                <td>a&#8196;b</td>
+                <td>我&#8196;们</td>
+            </tr>
+            
+            <tr>
+                <td>&amp;nbsp; : <span class="space">&amp;nbsp;</span></td>
+                <td>1&nbsp;2</td>
+                <td>a&nbsp;b</td>
+                <td>我&nbsp;们</td>
+            </tr>
+            <tr>
+                <td>en space : <span class="space">&amp;#8194;</span></td>
+                <td>1&#8194;2</td>
+                <td>a&#8194;b</td>
+                <td>我&#8194;们</td>
+            </tr>
+            <tr>
+                <td>figure space : <span class="space">&amp;#8199;</span></td>
+                <td>1&#8199;2</td>
+                <td>a&#8199;b</td>
+                <td>我&#8199;们</td>
+            </tr>
+            <tr>
+                <td>em space : <span class="space">&amp;#8195;</span></td>
+                <td>1&#8195;2</td>
+                <td>a&#8195;b</td>
+                <td>我&#8195;们</td>
+            </tr>
+            <tr>
+                <td><span class="space">全角空格: </span></td>
+                <td>1　2</td>
+                <td>a　b</td>
+                <td>我　们</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

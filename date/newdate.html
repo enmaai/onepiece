@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312" />
+    <style>
+    body{font-family:'verdana';font-size:12px;}
+    table{border-collapse:collapse;}
+    td,th{padding:6px 10px 5px;border:1px solid #aaa;}
+    </style>
+</head>
+<body>
+<table border="1" id="demo">
+    <thead>
+        <tr>
+            <th>js代码</th>
+            <th>注释</th>
+            <th>结果</th>
+            <th>异常</th>
+        </tr>
+    </thead>
+    <tr><td>new Date()</td><td>//没有参数</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date(10864000)</td><td>//millionseconds</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date(2010)</td><td>//year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date(2010,10)</td><td>//year,month</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date(2010,10,22)</td><td>//year,month,date</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date(2010,10,22,12)</td><td>//year,month,date,hour</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date(2010,10,22,12,12)</td><td>//year,month,date,hour,minute</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date(2010,10,22,12,12,12)</td><td>//year,month,date,hour,minute,seconds</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date(2010,10,22,12,12,12,1000)</td><td>//year,month,date,hour,minute,seconds,millionseconds</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('11/22/2010')</td><td>//month/date/year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('2010/11/22')</td><td>//year/month/date</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('11-22-2010')</td><td>//month-date-year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('2010-11-22')</td><td>//year-month-date</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('Nov 22,2010')</td><td>//month date,year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('Nov 22,2010 GMT')</td><td>//month date,year zone</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('Thu,11 22 2010')</td><td>//week,month date year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('Sat,11 22 2010')</td><td>//week,month date year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('Sat,11 22 2010 12:12:12')</td><td>//week,month date year hour:minute:seconds</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('Sat,11 22 2010 12:12:12 GMT')</td><td>//week,month date year hour:minute:seconds zone</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('11 Nov 2010')</td><td>//date month year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('11 Nov 2010 23:00 PM')</td><td>//date month year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('11 Nov 2010 11: PM')</td><td>//date month year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('11 Nov 2010 11')</td><td>//date month year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('11 Nov 10')</td><td>//date month year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('11 Nov 99')</td><td>//date month year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('T15:22')</td><td>//date month year</td><td class="r"></td><td class="e"></td></tr>
+    <tr><td>new Date('2010-06-09T15:20:00Z')</td><td>//date month year</td><td class="r"></td><td class="e"></td></tr>
+</table>
+<script src='http://a.tbcdn.cn/??s/yui/3.2.0/build/yui/yui-min.js,s/yui/3.2.0/build/loader/loader-min.js'></script>
+<script>
+var YUI_CONFIG = {
+    lang : 'zh-cn',
+    charset : 'GBK',
+    combine : true,
+    comboBase : 'http://a.tbcdn.cn/??',
+    root : 's/yui/3.2.0/build/',
+    filter:{
+        'searchExp': '&', 
+        'replaceStr': ','
+    }
+}
+YUI(YUI_CONFIG).use('node',function(Y){
+    var demo = Y.one('#demo'),
+        rs = demo.all('.r'),
+        es = demo.all('.e'),
+        
+        demo = [
+        new Date(),
+        new Date(10864000),
+        new Date(2010),
+        new Date(2010,10),
+        new Date(2010,10,22),
+        new Date(2010,10,22,12),
+        new Date(2010,10,22,12,12),
+        new Date(2010,10,22,12,12,12),
+        new Date(2010,10,22,12,12,12,1000),
+        
+        new Date('11/22/2010'),
+        new Date('2010/11/22'),
+        new Date('11-22-2010'),
+        new Date('2010-11-22'),
+        new Date('Nov 22,2010'),
+        new Date('Nov 22,2010 GMT'),
+        new Date('Thu,11 22 2010'),
+        new Date('Sat,11 22 2010'),
+        new Date('Thu,11 22 2010 12:12:12'),
+        new Date('Thu,11 22 2010 12:12:12 GMT'),
+        new Date('11 2010 Nov'),
+        new Date('11 2010 Nov 23: PM'),
+        new Date('11 2010 Nov 11: PM'),
+        new Date('11 2010 Nov 11'),
+        new Date('11 10 Nov'),
+        new Date('11 99 Nov'),
+        new Date('T15:22'),
+        new Date('2010-06-09T15:20:00Z')
+        ];
+    
+    for(var i=0,n=demo.length;i<n;i++){
+        try{
+            rs.item(i).setContent(demo[i]);
+        }catch(e){
+            rs.item(i).setContent('--');
+            es.item(i).setContent(e.message);
+        }
+    }
+});
+</script>
+</body>
+</html>
